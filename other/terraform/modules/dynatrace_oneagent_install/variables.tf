@@ -22,5 +22,5 @@ variable "private_key" { type = "string" description = "Private key of the insta
 
 variable "dynatrace_env_id" { type = "string" description = "Dynatrace environment ID" }
 variable "dynatrace_api_token" { type = "string" description = "Dynatrace API Token" }
-variavle "dynatrace_logs" { type = "string" description = "Provide application log files to Dynatrace?" default = "1" }
+variable "dynatrace_logs" { type = "string" description = "Provide application log files to Dynatrace?" default = "1" }
 
