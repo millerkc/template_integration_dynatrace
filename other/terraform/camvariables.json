@@ -70,14 +70,25 @@
     {
       "name": "dynatrace_logs",
       "type": "string",
-      "description": "Enable sending stdout/stderr logs from monitored processes to Dynatrace.",
+      "description": "Enable or disable sending stdout/stderr logs from monitored processes to Dynatrace.",
       "hidden": false,
-      "label": "APM agent URI type",
+      "label": "Application log access",
       "secured": false,
       "required": true,
       "immutable": false,
       "default": "1",
-      "group_name": "dynatrace_oneagent_linux"
+      "group_name": "dynatrace_oneagent_linux",
+      "options": [
+        {
+          "value": "1",
+          "label": "Enable",
+          "default": "true"
+        },
+        {
+          "value": "0",
+          "label": "Disable"
+        }
+      ]
     }
   ]
 }
