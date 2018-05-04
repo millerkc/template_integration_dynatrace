@@ -36,5 +36,5 @@ This template must be executed after the successful creation of a Virtual Machin
 |password|Password of the `root` user.|
 |dynatrace\_env\_id|Your Dynatrace Environment ID. This is the string that precedes `live.dynatrace.com` in the URL provided to you for installation when logged in to `dynatrace.com` (**Deploy Dynatrace > Start Installation > Linux**)|
 |dynatrace\_api\_token|Your Dynatrace API Token. This token must have InstallerDownload scope. A token with the required scope can be found by default when logged in to `dynatrace.com` at **Settings > Integration > Platform as a Service**.|
-|dynatrace\_logs\_|Enable sending stdout/stderr logs from monitored processes to Dynatrace. **1** (Default) = Enabled, **0** = Disabled|
+|dynatrace\_logs|Enable sending stdout/stderr logs from monitored processes to Dynatrace. **1** (Default) = Enabled, **0** = Disabled|
 
