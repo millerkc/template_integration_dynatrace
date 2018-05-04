@@ -1,8 +1,8 @@
 {
     "name": "Dynatrace OneAgent Installation Template",
-    "description": "This template will install Dynatrace OneAgent on a target node.",
+    "description": "Dynatrace OneAgent.",
     "version": "1.0",
-    "imageUrl": "",
+    "imageUrl": "https://dt-cdn.net/images/logo-vertical-positive-215-c44876d2db.png",
     "image": "",
     "type": "integration",
     "status": "active",
@@ -46,10 +46,10 @@
     "description": "1. You must already have a Dynatrace SaaS account (trial accounts are OK).<br>2. The supplied API Token must have InstallerDownload scope (can be found by default at Settings > Integration > Platform as a Service.<br />3. This integration template is run remotely on the Target Virtual Machine<br>4. Dynatrace SaaS requires internet access from the Target Virtual Machine.<br>"
 }
 ],
-      "featuredImageUrl": "",
-      "imageUrl": "",
-      "mediumImageUrl": "",
-      "smallImageUrl": "",
+      "featuredImageUrl": "https://dt-cdn.net/images/logo-vertical-positive-215-c44876d2db.png",
+      "imageUrl": "https://dt-cdn.net/images/logo-vertical-positive-215-c44876d2db.png",
+      "mediumImageUrl": "https://dt-cdn.net/images/logo-vertical-positive-215-c44876d2db.png",
+      "smallImageUrl": "https://dt-cdn.net/images/logo-vertical-positive-215-c44876d2db.png",
       "documentationUrl": "",
       "termsUrl": "",
       "media": [
