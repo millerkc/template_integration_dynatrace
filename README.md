@@ -1,10 +1,12 @@
-# APM Agent Installation Template
-Copyright IBM Corp. 2018, 2018
+# Dynatrace OneAgent Installation Template
+Copyright IBM Corp. 2018
 This code is released under the Apache 2.0 License.
 
 ## Description
 
-This template will install the IBM Application Performance Management Agent on a target host. The agents enabled is dependant on the apm_agents parameter, only those that are automatically configured will be configured. A seperate Integration Template must be called to configure specific agents such as was.
+This template will install Dynatrace OneAgent on a target host, and configure OneAgent for use with the Dynatrace service via the Internet.
+
+Integration with a local (on-premises) Dyntatrace server is not supported in this release.
 
 ## Integration Method
 
@@ -16,54 +18,23 @@ This template must be executed after the successful creation of a Virtual Machin
 
 ## Methods Implemented
 
-- **on_create** Installs and registers the APM Agent.
-- **on_delete** Not implemented.
+- **on\_create** Installs and registers the APM Agent.
+- **on\_delete** Not implemented. (Hosts cannot be explicitly removed from a Dynatrace account. Hosts are removed from the Dynatrace user interface automatically if they are inactive for 72 hours or more.)
 
 ## Prerequisites
 
-- An installed APM Server, the location details should be pre-filled in the APMADV_Agent_Install.tar file.
-- The APMADV_Agent_Install.tar file or equivalent, stored on a URL reachable location, for example, a HTTP Server. This file may be generate from the Server or distributed with an SAAS APM Offering.
-- The target server must be able to reach APM Server.
-- The target server must have greater than **4GB availible** in /tmp.
+- An active Dynatrace account (trial accounts are OK.)
+- The target server must be able to reach Dynatrace's servers via the internet.
+- The target server must have greater than **150MB available** in `/tmp`.
 - The target server must have remote logins enabled.
 
 ## Input Parameters
+|Variable|Description|
+|--- |--- |
+|ip\_address|IP Address of the target server.|
+|user|User on the target server to execute the installation (`root` required in this release)|
+|password|Password of the `root` user.|
+|dynatrace\_env\_id|Your Dynatrace Environment ID. This is the string that precedes `live.dynatrace.com` in the URL provided to you for installation when logged in to `dynatrace.com` (**Deploy Dynatrace > Start Installation > Linux**)|
+|dynatrace\_api\_token|Your Dynatrace API Token. This token must have InstallerDownload scope. A token with the required scope can be found by default when logged in to `dynatrace.com` at **Settings > Integration > Platform as a Service**.|
+|dynatrace\_logs\_|Enable sending stdout/stderr logs from monitored processes to Dynatrace. **1** (Default) = Enabled, **0** = Disabled|
 
-<table>
-  <tr>
-    <th>Variable</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>ip_address</td>
-    <td>IP Address of the target server.</td>
-  </tr>
-  <tr>
-    <td>user</td>
-    <td>User on the target server to execute the installation.</td>
-  </tr>
-  <tr>
-    <td>password</td>
-    <td>Password of the user.</td>
-  </tr>
-  <tr>
-    <td>apm_method</td>
-    <td>URI type for download, http reccomended.</td>
-  </tr>
-  <tr>
-    <td>apm_location</td>
-    <td>Source for the APM Agent installer, eg http://IP_ADDRESS:8888/apm-agent/APMADV_Agent_Install.tar</td>
-  </tr>
-  <tr>
-    <td>apm_source_subdir</td>
-    <td>Name of the subdir within the tar file that the installer is located in, eg, APMADV_Agent_Install_8.1.4.0.1</td>
-  </tr>
-  <tr>
-    <td>apm_dir</td>
-    <td>APM Installation Directory, default = /opt/ibm/apm/agent.</td>
-  </tr>
-  <tr>
-    <td>apm_agents</td>
-    <td>List of APM agents to install, eg, os.</td>
-  </tr>
-</table>

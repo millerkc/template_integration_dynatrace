@@ -46,62 +46,37 @@
       "group_name": "dynatrace_oneagent_linux"
     },
     {
-      "name": "apm_location",
+      "name": "dynatrace_env_id",
       "type": "string",
-      "description": "Source for the APM Agent installer, eg http://IP_ADDRESS:8888/apm-agent/APMADV_Agent_Install.tar",
+      "description": "Dynatrace Environment ID. This is the string that precedes live.dynatrace.com in the URL provided to you for installation when logged in to dynatrace.com",
       "hidden": false,
-      "label": "APM agent source location",
+      "label": "Dynatrace Environment ID",
       "secured": false,
       "required": true,
       "immutable": false,
       "group_name": "dynatrace_oneagent_linux"
     },
     {
-      "name": "apm_method",
+      "name": "dynatrace_api_token",
       "type": "string",
-      "description": "URI type for download, http reccomended.",
+      "description": "Dynatrace API Token. This token must have InstallerDownload scope. A token with the required scope can be found by default when logged in to dynatrace.com at Settings > Integration > Platform as a Service.",
+      "hidden": false,
+      "label": "Dynatrace API Token",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "dynatrace_oneagent_linux"
+    },
+    {
+      "name": "dynatrace_logs",
+      "type": "string",
+      "description": "Enable sending stdout/stderr logs from monitored processes to Dynatrace.",
       "hidden": false,
       "label": "APM agent URI type",
       "secured": false,
       "required": true,
       "immutable": false,
-      "default": "http",
-      "group_name": "dynatrace_oneagent_linux"
-    },
-    {
-      "name": "apm_source_subdir",
-      "type": "string",
-      "description": "Subdirectory within the installer where the installation files reside, eg APMADV_Agent_Install_8.1.4.0.1",
-      "hidden": false,
-      "label": "APM source subdirectory",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "default": "APMADV_Agent_Install_8.1.4.0.1",
-      "group_name": "dynatrace_oneagent_linux"
-    },
-    {
-      "name": "apm_dir",
-      "type": "string",
-      "description": "APM installation directory",
-      "hidden": false,
-      "label": "apm_dir",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "default": "/opt/ibm/apm/agent",
-      "group_name": "dynatrace_oneagent_linux"
-    },
-    {
-      "name": "apm_agents",
-      "type": "string",
-      "description": "A space separated list of agents to install. For example, os.",
-      "hidden": false,
-      "label": "APM agents list",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "default": "os",
+      "default": "1",
       "group_name": "dynatrace_oneagent_linux"
     }
   ]
